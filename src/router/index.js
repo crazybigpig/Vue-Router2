@@ -5,7 +5,12 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 const User = {
-  template: '<div>User</div>'
+  template: '<div>User</div>',
+  watch: {
+    '$route' (to, from) {
+      console.log(from.path + '--->' + to.path);
+    }
+  }
 }
 export default  new Router({
   routes: [
